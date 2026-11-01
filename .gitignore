@@ -1,0 +1,51 @@
+# Dependências
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Variáveis de ambiente e segredos (NUNCA commitar)
+.env
+.env.local
+.env.*.local
+*.env
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Build / saída
+dist/
+build/
+out/
+.sscrim/
+.scrim/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / editor
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+
+# Cache
+.cache/
+.tmp/
+tmp/
+__pycache__/
+*.pyc
+
+# Testes / relatórios locais (não fazem parte do site publicado)
+test-results/
+e2e-results.json
+e2e-errors.txt
+coverage/

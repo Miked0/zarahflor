@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zarah Flor · Clínica de estética especialista em pele negra</title>
+<meta name="description" content="Clínica de estética e saúde em São Paulo, especialista em tratamentos para pele negra. Depilação a laser, limpeza de pele, drenagem, massagens e nutricionista. Agende pelo WhatsApp (11) 97065-3411.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/svg+xml" sizes="32x32" href="favicon-32x32.svg">
+<link rel="icon" type="image/svg+xml" sizes="16x16" href="favicon-16x16.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.svg">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#9A5A3C">
+<meta property="og:title" content="Zarah Flor · Clínica de estética especialista em pele negra">
+<meta property="og:description" content="Clínica de estética e saúde em São Paulo, especialista em tratamentos para pele negra. Depilação a laser, limpeza de pele, drenagem, massagens e nutricionista. Agende pelo WhatsApp (11) 97065-3411.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zarahflor.com.br/">
+<meta property="og:image" content="og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Zarah Flor">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zarah Flor · Clínica de estética especialista em pele negra">
+<meta name="twitter:description" content="Clínica de estética e saúde em São Paulo, especialista em tratamentos para pele negra.">
+<meta name="twitter:image" content="og-image.svg">
+<link rel="stylesheet" href="scrollcraft.css">
+<style>
+  /* ---- Identidade visual: Zarah Flor ---- */
+  :root {
+    /* Paleta oficial do Manual de Identidade Visual Zarah Flor */
+    --sc-canvas:     #FAF7F2;   /* Areia — fundo claro */
+    --sc-surface:    #FFFFFF;   /* branco dos cards */
+    --sc-ink:        #2A1712;   /* Cacau — texto principal */
+    --sc-ink-soft:   #6E5E52;   /* texto secundário */
+    --sc-accent:     #C9944A;   /* Ouro — acento principal */
+    --sc-accent-ink: #FFFFFF;
+    --sc-hibisco:    #A335AE;   /* Hibisco — top bar / acento secundário */
+    --sc-font-display: "Archivo", system-ui, sans-serif;
+    --sc-font-text:    "Geist", system-ui, sans-serif;
+  }
+
+  body { margin: 0; background: var(--sc-canvas); color: var(--sc-ink); }
+  .sc-body, .sc-lede { color: var(--sc-ink); }
+  .chapter-1 .sc-body,
+  .chapter-1 .sc-lede { color: #E8E0D4; }
+
+  /* ---- Media frame: imagem dentro de quadro com borda sutil (simplicidade de clínica) ---- */
+  .media-frame {
+    position: relative;
+    width: 100%;
+    background: var(--sc-surface);
+    border: 1px solid rgba(110,94,82,0.25);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .media-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ---- Folio (navegação por capítulo, sem barra fixa) ---- */
+  .folio {
+    position: fixed;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    z-index: 20;
+  }
+  .folio__row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  .folio__item {
+    width: 0.75rem; height: 0.75rem;
+    border-radius: 50%;
+    background: var(--sc-ink-soft);
+    cursor: pointer;
+    transition: transform 0.25s var(--sc-ease-out), background 0.25s var(--sc-ease-out);
+    flex-shrink: 0;
+  }
+  .folio__item--current { background: var(--sc-accent); transform: scale(1.6); box-shadow: 0 0 0 3px rgba(154,90,60,0.25); }
+  .folio__label {
+    position: static;
+    font: 600 0.68rem/1.2 var(--sc-font-text);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--sc-ink-soft);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.25s var(--sc-ease-out), color 0.25s var(--sc-ease-out);
+    pointer-events: none;
+  }
+  .folio__item--current ~ .folio__label,
+  .folio__item:hover ~ .folio__label { opacity: 1; color: var(--sc-ink); }
+
+  /* ---- Folha de encaminhamento (assinatura) ---- */
+  .referral {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    width: 19rem;
+    background: var(--sc-surface);
+    border: 1px solid var(--sc-ink-soft);
+    padding: 1.25rem 1.5rem;
+    font: 0.85rem/1.55 var(--sc-font-text);
+    color: var(--sc-ink);
+    transform: translatey(1.4rem);
+    opacity: 0;
+    transition: transform 0.6s var(--sc-ease-out), opacity 0.6s var(--sc-ease-out), box-shadow 0.6s var(--sc-ease-out);
+    z-index: 20;
+    box-shadow: 0 20px 40px -12px rgba(37,29,24,0.12);
+  }
+  .referral--visible { transform: translatey(0); opacity: 1; box-shadow: 0 30px 50px -16px rgba(37,29,24,0.18); }
+  .referral__title { font: 700 0.85rem/1.2 var(--sc-font-display); margin: 0 0 0.7rem 0; color: var(--sc-ink); text-transform: uppercase; letter-spacing: 0.12em; }
+  .referral__line { margin: 0 0 0.45rem 0; padding-left: 1rem; text-indent: -1rem; position: relative; }
+  .referral__line::before { content: "▪"; color: var(--sc-ink); font-weight: 700; position: absolute; left: 0; top: 0.08rem; font-size: 0.85rem; }
+  .referral__cta {
+    margin-top: 1rem;
+    display: inline-block;
+    font: 700 0.9rem/1.2 var(--sc-font-display);
+    color: var(--sc-ink);
+    background: var(--sc-accent);
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 0.35rem;
+    transition: transform 0.15s var(--sc-ease-out), background 0.2s var(--sc-ease-out);
+  }
+  .referral__cta:active { transform: scale(0.97); }
+
+  /* ---- Títulos de capítulo ---- */
+  .sc-chapter-title {
+    font: 700 1.05rem/1.2 var(--sc-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--sc-ink);
+    margin: 0 0 1.1rem 0;
+  }
+
+  /* ---- Seções / capítulos ---- */
+  .sc-section { position: relative; }
+  .sc-wrap { max-width: 920px; margin: 0 auto; padding: 0 1.5rem; }
+  .sc-stack > * + * { margin-top: 1.3rem; }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .split--text-right { align-items: start; }
+  @media (max-width: 860px) {
+    .split { grid-template-columns: 1fr; gap: 2rem; }
+    .folio { display: none; }
+  }
+
+  /* Capítulo 1 — chão escuro (Cacau oficial), texto claro (hard cut de ground) */
+  .chapter-1 { background: #2A1712; color: #E8E0D4; }
+  .chapter-1 .sc-stage { color: #E8E0D4; }
+  .chapter-1 .sc-body,
+  .chapter-1 .sc-lede { color: #E8E0D4; }
+  .chapter-1 .sc-chapter-title { color: #C9A894; }
+
+  /* Capítulo 2 — coluna de mídia com quadro com borda sutil */
+  .media-col { position: relative; }
+  .media-col .media-frame { width: 100%; height: auto; }
+  .sc-caption {
+    font: 0.8rem/1.45 var(--sc-font-text);
+    color: var(--sc-ink-soft);
+    margin-top: 0.7rem;
+  }
+
+  /* ---- Placeholder com textura (até fotos reais da clínica existirem) ---- */
+  .placeholder {
+    position: relative;
+    background: var(--sc-surface);
+    border: 1px solid rgba(110,94,82,0.25);
+    border-radius: 0.5rem;
+    color: var(--sc-ink-soft);
+    font: 0.8rem/1.45 var(--sc-font-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    overflow: hidden;
+  }
+  .placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .placeholder__caption {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 1rem;
+    max-width: 26ch;
+  }
+
+  /* ---- Rail de tratamentos (pan) ---- */
+  .rail { display: flex; gap: 1.4rem; padding: 1rem 0 0.5rem 0; }
+  .rail__lead { flex: 0 0 32%; min-width: 20rem; }
+  .item { flex: 0 0 25rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .item img, .item .media-frame { width: 100%; height: 23rem; object-fit: cover; background: var(--sc-surface); display: block; border-radius: 0.5rem; border: 1px solid rgba(110,94,82,0.25); }
+  .item h3 { font: 700 1.15rem/1.25 var(--sc-font-display); margin: 0; color: var(--sc-ink); }
+  .item p { font: 0.9rem/1.55 var(--sc-font-text); color: var(--sc-ink-soft); margin: 0; }
+  @media (max-width: 860px) {
+    .rail__lead { flex: 0 0 100%; min-width: auto; }
+    .item { flex: 0 0 17rem; }
+    .item img, .item .media-frame { height: 15rem; }
+  }
+
+  /* ---- Estatísticas reais (count) ---- */
+  .sc-stats { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.4rem; }
+  .sc-stats p { margin: 0; color: var(--sc-ink); }
+
+  /* ---- Fechamento (colophon) ---- */
+  .close { padding: 5rem 0 7rem 0; }
+  .close__inner { max-width: 62ch; margin: 0 auto; }
+  .sc-cta--text {
+    display: inline-block;
+    font: 700 1rem/1.45 var(--sc-font-display);
+    color: var(--sc-ink);
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 1.5px;
+    transition: color 0.2s var(--sc-ease-out), text-decoration-color 0.2s var(--sc-ease-out);
+  }
+  .sc-cta--text:hover { color: #7A4630; text-decoration-color: #7A4630; }
+
+  .foot { margin-top: 2.6rem; border-top: 1px solid rgba(110,94,82,0.35); padding-top: 1.1rem; font: 0.75rem/1.6 var(--sc-font-text); color: var(--sc-ink-soft); }
+  .foot p { margin: 0.25rem 0; }
+
+  /* ---- Grain e scrims herdam de scrollcraft.css ---- */
+  .sc-grain { opacity: 0.035; }
+
+  /* Parallax layers (profundidade no Capítulo 2) */
+  .pf-layer { position: absolute; inset: 0; }
+
+  /* Top bar Hibisco */
+  .top-bar {
+    background: var(--sc-hibisco);
+    color: #FFFFFF;
+    font: 0.82rem/1.4 var(--sc-font-text);
+    text-align: center;
+    padding: 0.35rem 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* Banner de cookies (item 17) */
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--sc-surface);
+    border-top: 1px solid rgba(110,94,82,0.35);
+    padding: 1rem 1.5rem;
+    z-index: 100;
+    box-shadow: 0 -10px 30px -12px rgba(37,29,24,0.15);
+  }
+  .cookie-banner__content {
+    max-width: 920px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .cookie-banner__text {
+    font: 0.9rem/1.5 var(--sc-font-text);
+    color: var(--sc-ink-soft);
+    margin: 0;
+  }
+  .cookie-banner__text a {
+    color: var(--sc-ink);
+    text-decoration: underline;
+  }
+  .cookie-banner__btn {
+    font: 700 0.9rem/1.2 var(--sc-font-display);
+    color: var(--sc-ink);
+    background: var(--sc-accent);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    transition: background 0.2s var(--sc-ease-out);
+  }
+  .cookie-banner__btn:hover { background: #7A4630; }
+  @media (max-width: 860px) {
+    .cookie-banner__content { flex-direction: column; align-items: stretch; gap: 0.8rem; text-align: center; }
+    .cookie-banner__btn { width: 100%; }
+  }
+
+  /* Hero stats (referência do site) */
+  .sc-stat { display:flex; flex-direction:column; gap:0.15rem; }
+  .sc-stat__num { font: 700 2rem/1.1 var(--sc-font-display); color: var(--sc-ink); }
+  .sc-stat__lab { font: 0.8rem/1.3 var(--sc-font-text); color: var(--sc-ink-soft); }
+
+  /* Tratamentos — cards no estilo do site de referência */
+  .treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.6rem;
+    margin-top: 2.2rem;
+  }
+  .treatment {
+    border: 1px solid rgba(110,94,82,0.25);
+    border-radius: 0.5rem;
+    padding: 1.6rem;
+    background: var(--sc-surface);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.2s var(--sc-ease-out), transform 0.2s var(--sc-ease-out);
+  }
+  .treatment:hover { border-color: var(--sc-accent); transform: translateY(-2px); }
+  .treatment--accent {
+    background: var(--sc-hibisco);
+    color: #FFFFFF;
+    border-color: var(--sc-hibisco);
+  }
+  .treatment--accent .treatment__badge,
+  .treatment--accent .treatment__title,
+  .treatment--accent .treatment__desc { color: #FFFFFF; }
+  .treatment__badge {
+    font: 600 0.72rem/1.2 var(--sc-font-text);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--sc-ink);
+  }
+  .treatment--accent .treatment__badge { color: #FFFFFF; }
+  .treatment__img {
+    width: 100%; aspect-ratio: 1; background: var(--sc-surface); border-radius: 0.4rem;
+    border: 1px solid rgba(110,94,82,0.15); display:flex; align-items:center; justify-content:center;
+    overflow: hidden;
+  }
+  .treatment__img img { width: 100%; height: 100%; object-fit: cover; display:block; }
+  .treatment--accent .treatment__img { background: #FFFFFF; }
+  .treatment__title { font: 700 1.25rem/1.25 var(--sc-font-display); margin: 0; color: var(--sc-ink); }
+  .treatment--accent .treatment__title { color: #FFFFFF; }
+  .treatment__desc { font: 0.9rem/1.55 var(--sc-font-text); color: var(--sc-ink-soft); margin: 0; }
+  .treatment--accent .treatment__desc { color: rgba(255,255,255,0.9); }
+  .treatment__cta {
+    display: inline-block; font: 700 0.9rem/1.2 var(--sc-font-display);
+    color: var(--sc-ink); background: #FFFFFF; text-decoration: none; padding: 0.55rem 1.1rem;
+    border-radius: 0.35rem; margin-top: auto; border: none; cursor: pointer;
+    transition: background 0.2s var(--sc-ease-out), color 0.2s var(--sc-ease-out);
+  }
+  .treatment__cta:hover { background: var(--sc-accent); color: var(--sc-ink); }
+  .treatment--accent .treatment__cta { background: #FFFFFF; color: var(--sc-hibisco); }
+  .treatment--accent .treatment__cta:hover { background: #FFFFFF; color: #7A267A; }
+
+  @media (max-width: 860px) {
+    .treatments-grid { grid-template-columns: 1fr; gap: 1.4rem; margin-top: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top bar Hibisco — mensagem inclusiva do Manual de Identidade -->
+<header class="top-bar">
+  <span class="top-bar__msg">Clínica inclusiva · todos os corpos e identidades são bem-vindos</span>
+</header>
+
+<span data-sc-progress></span>
+<div class="sc-grain" aria-hidden="true"></div>
+
+<!-- Folio: navegação por capítulo (sem barra fixa) -->
+<nav class="folio" aria-label="Capítulos">
+  <div class="folio__row">
+    <div class="folio__item folio__item--1" data-folio-to="1" tabindex="0" role="button"></div>
+    <div class="folio__label" data-folio-label="1">1 · A pele que você tem</div>
+  </div>
+  <div class="folio__row">
+    <div class="folio__item folio__item--2" data-folio-to="2" tabindex="0" role="button"></div>
+    <div class="folio__label" data-folio-label="2">2 · Por que pele negra precisa de protocolo</div>
+  </div>
+  <div class="folio__row">
+    <div class="folio__item folio__item--3" data-folio-to="3" tabindex="0" role="button"></div>
+    <div class="folio__label" data-folio-label="3">3 · Os tratamentos</div>
+  </div>
+  <div class="folio__row">
+    <div class="folio__item folio__item--4" data-folio-to="4" tabindex="0" role="button"></div>
+    <div class="folio__label" data-folio-label="4">4 · Resultados reais</div>
+  </div>
+  <div class="folio__row">
+    <div class="folio__item folio__item--5" data-folio-to="5" tabindex="0" role="button"></div>
+    <div class="folio__label" data-folio-label="5">5 · Agendar</div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- 1 · CAPA / title page — flow + in. Tipo sobre o chão, nenhuma mídia acima da dobra. -->
+  <section class="sc-section" data-sc-act="flow" data-sc-drift="#FAF7F2" style="background-color:#FAF7F2;">
+    <div class="sc-wrap sc-stack" data-sc-in data-sc-stagger="70" style="padding-top: 9vh; padding-bottom: 16vh;">
+      <h2 class="sc-chapter-title" style="margin:0 0 1rem 0; font-size: 0.9rem;">ESPECIALISTAS EM PELE NEGRA · SÃO PAULO</h2>
+      <h1 class="sc-display sc-display--xl" style="text-wrap: balance; line-height: 1.05;">Normalize o <span style="color: var(--sc-ink);">luxo em sua vida.</span></h1>
+      <p class="sc-body sc-lede" style="max-width: 44ch; text-wrap: balance;">Depilação a laser, criolipólise, limpeza de pele, drenagem, massagens e nutrição — com protocolos pensados para a sua pele, em um espaço acolhedor.</p>
+      <div style="display:flex; gap:0.8rem; flex-wrap:wrap; margin-top:1.4rem;">
+        <a class="sc-cta sc-cta--text" href="https://wa.me/5511970653411" style="color:var(--sc-ink); text-decoration:underline; text-underline-offset:0.3em; font-weight:700;">Agendar pelo WhatsApp · (11) 97065-3411</a>
+        <a class="sc-cta sc-cta--text" href="#tratamentos" style="color:var(--sc-ink); text-decoration:none; padding:0.75rem 1.4rem; border:1px solid var(--sc-ink-soft); border-radius:0.4rem; font-weight:700;">Ver tratamentos</a>
+      </div>
+      <div style="margin-top:2.6rem; display:flex; gap:2.4rem; align-items:center; flex-wrap:wrap;">
+        <div class="sc-stat"><span class="sc-stat__num">5,0</span><span class="sc-stat__lab">353 avaliações no Google</span></div>
+        <div class="sc-stat"><span class="sc-stat__num">87,6 mil</span><span class="sc-stat__lab">seguidores no Instagram</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · Capítulo 1 · tensão — pin. Chão escuro, cópia se empilha no frame parado. -->
+  <section data-sc-act="pin" data-sc-span="2.6" data-sc-drift="#2A1712" style="background-color:#2A1712;">
+    <div data-sc-stage class="sc-stage chapter-1" style="padding: 12vh 2rem;" data-sc-spotlight>
+      <h2 class="sc-chapter-title">Capítulo 1 · A pele que você tem</h2>
+      <p class="sc-lede" style="font-size: 1.3rem; max-width: 50ch; text-align: center; text-wrap: balance;" data-sc-cue="0 0.42 0">A maioria dos protocolos de estética foi pensada para outro tipo de pele.</p>
+      <p class="sc-body" style="max-width: 50ch; text-align: center; text-wrap: pretty;" data-sc-cue="0.36 0.74">Pele negra reage diferente ao laser, à limpeza e ao sol. Cuidar dela exige protocolo próprio, não adaptação.</p>
+      <p class="sc-body" style="max-width: 50ch; text-align: center; text-wrap: balance;" data-sc-cue="0.68 1">Na Zarah Flor, a pele negra não é exceção — é a especialidade.</p>
+    </div>
+  </section>
+
+  <!-- 3 · Capítulo 2 · turn (PEAK) — flow + reveal + paralaxe na coluna de mídia. -->
+  <section class="sc-section chapter-2" data-sc-act="flow" data-sc-drift="#FAF7F2" style="background-color:#FAF7F2;">
+    <div class="sc-wrap split split--text-right" style="padding: 9vh 0 11vh 0;">
+      <div class="sc-stack" data-sc-in data-sc-stagger="70">
+        <h2 class="sc-chapter-title" style="color:var(--sc-ink);">Capítulo 2 · Por que pele negra precisa de protocolo próprio</h2>
+        <h2 class="sc-display sc-display--lg" data-sc-cue="0.1 0.62" data-sc-kinetic="lines" style="text-wrap: balance;">Manchas, pelos, textura, flacidez. Cada um tem um tratamento que respeita a sua pele.</h2>
+        <p class="sc-body" data-sc-cue="0.32 0.8" style="max-width: 46ch; text-wrap: pretty;">Não é «pele sensível» genérica. É fototipo, é tendência a manchas, é como o laser se comporta na sua pele. Aqui o protocolo nasceu para isso.</p>
+      </div>
+      <div class="media-col" style="padding-top: 2rem; position: relative;">
+        <div class="pf-layer pf-layer--back" data-sc-parallax="-0.8" style="inset:0; background:radial-gradient(circle at 50% 50%, rgba(163,53,174,0.10), transparent 60%); border-radius:1rem;"></div>
+        <figure data-sc-reveal="left" data-sc-reveal-at="0.15 0.6">
+          <div class="media-frame" style="height: 520px; position:relative; z-index:2;">
+            <img src="assets/chapter2-consulta.svg" width="1400" height="900" alt="Avaliação de pele na consulta">
+          </div>
+          <figcaption class="sc-caption">Avaliação personalizada para cada tipo de pele.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · Capítulo 3 · Os tratamentos — pan rail (breadth of range). -->
+  <section data-sc-act="pan" data-sc-span="4.2" data-sc-drift="#FAF7F2" style="background-color:#FAF7F2;">
+    <div data-sc-stage class="chapter-3" style="padding: 10vh 2rem 14vh 2rem;">
+      <h2 class="sc-chapter-title">Capítulo 3 · Os tratamentos</h2>
+      <p class="sc-body" style="max-width: 62ch; text-wrap: pretty; margin-bottom: 1.6rem;">Cada tratamento abaixo tem protocolo validado para pele negra.</p>
+      <div class="rail" data-sc-pan="0.06">
+        <div class="rail__lead sc-stack">
+          <p class="sc-body" style="max-width: 34ch; text-wrap: pretty;">Não sabe por onde começar? Comece pela avaliação.</p>
+          <a class="treatment__cta" href="https://wa.me/5511970653411" style="background:var(--sc-hibisco); color:#FFFFFF;">Avaliação personalizada</a>
+        </div>
+        <article class="item" data-sc-tilt="6">
+          <div class="media-frame" style="height: 20rem;">
+            <img src="assets/laser.svg" width="900" height="900" alt="Depilação a laser">
+          </div>
+          <h3>Depilação a laser</h3>
+          <p>Para todos os fototipos, sem manchas pós-procedimento.</p>
+        </article>
+        <article class="item" data-sc-tilt="6">
+          <div class="media-frame" style="height: 20rem;">
+            <img src="assets/limpeza.svg" width="900" height="900" alt="Limpeza de pele">
+          </div>
+          <h3>Limpeza de pele</h3>
+          <p>Extração e cuidado que respeitam a barreira da pele negra.</p>
+        </article>
+        <article class="item" data-sc-tilt="6">
+          <div class="media-frame" style="height: 20rem;">
+            <img src="assets/drenagem.svg" width="900" height="900" alt="Drenagem linfática">
+          </div>
+          <h3>Drenagem linfática</h3>
+          <p>Redução de medidas e bem-estar com técnicas manuais.</p>
+        </article>
+        <article class="item" data-sc-tilt="6">
+          <div class="media-frame" style="height: 20rem;">
+            <img src="assets/massagem.svg" width="900" height="900" alt="Massagem terapêutica">
+          </div>
+          <h3>Massagem terapêutica</h3>
+          <p>Alívio de tensão e recuperação muscular.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · Capítulo 4 + 5 · Alívio + Compromisso — pin + count + close. Resultados reais, endereço, agendamento. -->
+  <section data-sc-act="pin" data-sc-span="2.4" data-sc-drift="#FAF7F2" style="background-color:#FAF7F2;">
+    <div data-sc-stage class="chapter-4" style="padding: 10vh 2rem 14vh 2rem;">
+      <h2 class="sc-chapter-title">Capítulo 4 · Resultados reais</h2>
+      <p class="sc-body" style="max-width: 46ch; text-align: center; text-wrap: balance;" data-sc-cue="0 0.5 0">Mais de 87 mil pessoas acompanham o trabalho da Zarah Flor no Instagram. A clínica tem avaliação 5,0 no Google.</p>
+      <div class="sc-stats" data-sc-in data-sc-stagger="60" style="justify-content: center;">
+        <p class="sc-display sc-display--lg" style="text-align: center;"><span data-sc-count="0 87,6" data-sc-count-at="0.1 0.7">0</span>K seguidores no Instagram</p>
+        <p class="sc-display sc-display--lg" style="text-align: center;"><span data-sc-count="0 5,0" data-sc-count-at="0.1 0.7">0</span> de avaliação no Google</p>
+      </div>
+      <div class="close" style="margin-top:3rem;">
+        <div class="close__inner">
+          <h2 class="sc-display sc-display--lg" style="text-wrap: balance;">Capítulo 5 · Venha conhecer a clínica.</h2>
+          <p class="sc-body" style="max-width: 46ch; text-wrap: pretty;">Edifício Central Offices · R. Maestro Cardim, 560 - Sala 205 · Bela Vista, São Paulo - SP</p>
+          <p class="sc-body" style="max-width: 46ch; text-wrap: pretty;">WhatsApp (11) 97065-3411 · abre sábado às 09:00</p>
+          <a class="sc-cta sc-cta--text" href="https://wa.me/5511970653411">Agendar pelo WhatsApp · (11) 97065-3411</a>
+        </div>
+        <footer class="foot">
+          <p class="sc-caption">Zarah Flor · Clínica de estética especialista em pele negra</p>
+          <p class="sc-caption">Inclusiva · profissionais especializadas · protocolos próprios</p>
+        </footer>
+      </div>
+    </div>
+  </section>
+
+
+
+</main>
+
+<!-- Assinatura: folha de encaminhamento que acumula um trecho por capítulo passado -->
+<aside class="referral" id="referral">
+  <div class="referral__title">Seu encaminhamento</div>
+  <div class="referral__lines" id="referralLines"></div>
+  <a class="referral__cta" href="https://wa.me/5511970653411?text=Oi,%20Zarah%20Flor.%20Vi%20o%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.">Abrir no WhatsApp</a>
+</aside>
+
+  <!-- Banner de cookies (item 17) -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-banner__content">
+      <p class="cookie-banner__text">Usamos cookies para melhorar sua experiência e medir o tráfego do site. Ao continuar, você concorda com nossa <a href="privacidade.html">Política de Privacidade</a>.</p>
+      <button id="cookie-accept" class="cookie-banner__btn">Aceitar</button>
+    </div>
+  </div>
+
+  <!-- Analytics (item 18) — configurar ID real do Google Tag Manager antes de publicar -->
+
+<script src="scrollcraft.js"></script>
+<script>
+ScrollCraft.mount(document.body);
+
+/* ---- Assinatura: folha de encaminhamento ---- */
+(function () {
+  const linesEl = document.getElementById('referralLines');
+  const referral = document.getElementById('referral');
+  const chapters = [
+    { id: 1, text: "Pele negra tratada como especialidade, não como exceção." },
+    { id: 2, text: "Protocolo próprio para manchas, pelos, textura e flacidez." },
+    { id: 3, text: "Tratamentos com protocolo validado para pele negra." },
+    { id: 4, text: "Avaliação 5,0 no Google e mais de 87 mil no Instagram." },
+  ];
+  let stamped = new Set();
+
+  function stamp(chapterId) {
+    if (stamped.has(chapterId)) return;
+    const ch = chapters.find(c => c.id === chapterId);
+    if (!ch) return;
+    stamped.add(chapterId);
+    const div = document.createElement('div');
+    div.className = 'referral__line';
+    div.textContent = ch.text;
+    div.style.opacity = '0';
+    div.style.transform = 'translatex(-0.6rem)';
+    linesEl.appendChild(div);
+    requestAnimationFrame(() => {
+      div.style.transition = 'opacity 0.4s var(--sc-ease-out), transform 0.4s var(--sc-ease-out)';
+      div.style.opacity = '1';
+      div.style.transform = 'translatex(0)';
+    });
+    if (stamped.size === chapters.length) referral.classList.add('referral--visible');
+  }
+
+  /* O folio marca o capítulo atual com base na posição de scroll. */
+  const actSections = document.querySelectorAll('section[data-sc-act]');
+  const folioItems = document.querySelectorAll('.folio__item');
+
+  function updateFolio() {
+    let current = null;
+    actSections.forEach((sec, i) => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.45 && rect.bottom >= window.innerHeight * 0.45) {
+        current = i + 1;
+        stamp(i + 1);
+      }
+    });
+    folioItems.forEach((item, i) => {
+      item.classList.toggle('folio__item--current', current === i + 1);
+    });
+  }
+
+  updateFolio();
+  window.addEventListener('scroll', updateFolio, { passive: true });
+})();
+</script>
+<script>
+  /* Folio items: clicar rola ate o capitulo correspondente (delegacao no document, rola apos o engine montar). */
+  document.addEventListener('click', (e) => {
+    const item = e.target.closest('.folio__item');
+    if (!item) return;
+    const items = document.querySelectorAll('.folio__item');
+    const i = Array.prototype.indexOf.call(items, item);
+    const sections = document.querySelectorAll('section[data-sc-act]');
+    const target = sections[i];
+    if (target) {
+      const y = target.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: y, left: 0 });
+    }
+  });
+  /* Enter/Space ativam os itens do folio via teclado. */
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const item = e.target.closest('.folio__item');
+    if (!item) return;
+    e.preventDefault();
+    item.click();
+  });
+
+  /* Banner de cookies: fecha ao aceitar e persiste escolha. */
+  (function () {
+    const banner = document.getElementById('cookie-banner');
+    const btn = document.getElementById('cookie-accept');
+    if (!banner || !btn) return;
+    if (localStorage.getItem('zarahflor_cookies') === 'accepted') {
+      banner.style.display = 'none';
+      return;
+    }
+    banner.style.display = 'block';
+    btn.addEventListener('click', () => {
+      localStorage.setItem('zarahflor_cookies', 'accepted');
+      banner.style.display = 'none';
+    });
+  })();
+</script>
+</body>
+</html>

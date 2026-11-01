@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2"/>
+      <stop offset="100%" stop-color="#F0EADD"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#bgGrad)"/>
+  <!-- Equipamento de depilação a laser minimalista -->
+  <rect x="280" y="300" width="340" height="400" rx="16" fill="#F0EADD" stroke="#D9CCB8" stroke-width="2"/>
+  <rect x="360" y="340" width="180" height="60" rx="4" fill="#E6DBD0"/>
+  <rect x="360" y="420" width="180" height="120" rx="6" fill="#251D18" opacity="0.9"/>
+  <circle cx="450" cy="560" r="34" fill="#9A5A3C"/>
+  <rect x="410" y="610" width="80" height="140" rx="4" fill="#F0EADD"/>
+</svg>

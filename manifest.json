@@ -1,0 +1,14 @@
+{
+  "name": "Zarah Flor",
+  "short_name": "Zarah Flor",
+  "description": "Clínica de estética e saúde em São Paulo, especialista em tratamentos para pele negra.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F4F0",
+  "theme_color": "#9A5A3C",
+  "icons": [
+    { "src": "/favicon-16x16.svg", "sizes": "16x16", "type": "image/svg+xml" },
+    { "src": "/favicon-32x32.svg", "sizes": "32x32", "type": "image/svg+xml" },
+    { "src": "/apple-touch-icon.svg", "sizes": "180x180", "type": "image/svg+xml" }
+  ]
+}

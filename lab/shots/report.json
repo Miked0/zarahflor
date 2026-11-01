@@ -1,0 +1,1011 @@
+{
+  "doc": {
+    "height": 11284,
+    "vh": 900,
+    "acts": [
+      "flow",
+      "pin",
+      "flow",
+      "pan",
+      "pin",
+      "flow"
+    ],
+    "world": null
+  },
+  "report": [
+    {
+      "i": 0,
+      "y": 0,
+      "pct": 0,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none"
+      ],
+      "act": "flow",
+      "stages": [
+        1123,
+        4775,
+        8555
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 1,
+      "y": 317,
+      "pct": 3,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none"
+      ],
+      "act": "flow",
+      "stages": [
+        806,
+        4458,
+        8238
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 2,
+      "y": 700,
+      "pct": 7,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "A maioria dos protocolos de estética foi",
+          "dir": "light-on-dark",
+          "worst": 13.05,
+          "mean": 13.05
+        }
+      ],
+      "cues": [
+        {
+          "t": "A maioria dos protocolos de estética foi pensa",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        423,
+        4075,
+        7855
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 3,
+      "y": 1083,
+      "pct": 10,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "A maioria dos protocolos de estética foi",
+          "dir": "light-on-dark",
+          "worst": 13.05,
+          "mean": 13.05
+        }
+      ],
+      "cues": [
+        {
+          "t": "A maioria dos protocolos de estética foi pensa",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        40,
+        3692,
+        7472
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 4,
+      "y": 1152,
+      "pct": 11,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "A maioria dos protocolos de estética foi",
+          "dir": "light-on-dark",
+          "worst": 13.05,
+          "mean": 13.05
+        }
+      ],
+      "cues": [
+        {
+          "t": "A maioria dos protocolos de estética foi pensa",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        0,
+        3623,
+        7403
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(248,245,240)"
+    },
+    {
+      "i": 5,
+      "y": 1428,
+      "pct": 14,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "A maioria dos protocolos de estética foi",
+          "dir": "light-on-dark",
+          "worst": 13.05,
+          "mean": 13.05
+        }
+      ],
+      "cues": [
+        {
+          "t": "A maioria dos protocolos de estética foi pensa",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        0,
+        3347,
+        7127
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(114,100,95)"
+    },
+    {
+      "i": 6,
+      "y": 1705,
+      "pct": 16,
+      "settled": true,
+      "contrast": [],
+      "cues": [
+        {
+          "t": "A maioria dos protocolos de estética foi pensa",
+          "o": 0.04
+        },
+        {
+          "t": "Pele negra reage diferente ao laser, à limpeza",
+          "o": 0.34
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        0,
+        3070,
+        6850
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(42,23,18)"
+    },
+    {
+      "i": 7,
+      "y": 1981,
+      "pct": 19,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Pele negra reage diferente ao laser, à l",
+          "dir": "light-on-dark",
+          "worst": 13.05,
+          "mean": 13.05
+        }
+      ],
+      "cues": [
+        {
+          "t": "Pele negra reage diferente ao laser, à limpeza",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        0,
+        2794,
+        6574
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(42,23,18)"
+    },
+    {
+      "i": 8,
+      "y": 2258,
+      "pct": 22,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Na Zarah Flor, a pele negra não é exceçã",
+          "dir": "light-on-dark",
+          "worst": 13.05,
+          "mean": 13.05
+        }
+      ],
+      "cues": [
+        {
+          "t": "Na Zarah Flor, a pele negra não é exceção — é ",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        0,
+        2517,
+        6297
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(42,23,18)"
+    },
+    {
+      "i": 9,
+      "y": 2534,
+      "pct": 24,
+      "settled": true,
+      "contrast": [],
+      "cues": [
+        {
+          "t": "Na Zarah Flor, a pele negra não é exceção — é ",
+          "o": 0.11
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "inset(0px 100% 0px 0px)"
+      ],
+      "act": "pin",
+      "stages": [
+        0,
+        2241,
+        6021
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(42,23,18)"
+    },
+    {
+      "i": 10,
+      "y": 2607,
+      "pct": 25,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "inset(0px 100% 0px 0px)"
+      ],
+      "act": "pin",
+      "stages": [
+        -44,
+        2168,
+        5948
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(44,25,20)"
+    },
+    {
+      "i": 11,
+      "y": 3032,
+      "pct": 29,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Manchas, pelos, textura, flacidez. Cada ",
+          "dir": "dark-on-light",
+          "worst": 15.98,
+          "mean": 15.98
+        }
+      ],
+      "cues": [
+        {
+          "t": "Manchas, pelos, textura, flacidez. Cada um tem",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "inset(0px 94.82% 0px 0px)"
+      ],
+      "act": "flow",
+      "stages": [
+        -469,
+        1743,
+        5523
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(179,170,165)"
+    },
+    {
+      "i": 12,
+      "y": 3456,
+      "pct": 33,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Manchas, pelos, textura, flacidez. Cada ",
+          "dir": "dark-on-light",
+          "worst": 15.98,
+          "mean": 15.98
+        }
+      ],
+      "cues": [
+        {
+          "t": "Manchas, pelos, textura, flacidez. Cada um tem",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "inset(0px 40.49% 0px 0px)"
+      ],
+      "act": "flow",
+      "stages": [
+        -893,
+        1319,
+        5099
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 13,
+      "y": 3881,
+      "pct": 37,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Não é «pele sensível» genérica. É fototi",
+          "dir": "dark-on-light",
+          "worst": 15.98,
+          "mean": 15.98
+        }
+      ],
+      "cues": [
+        {
+          "t": "Manchas, pelos, textura, flacidez. Cada um tem",
+          "o": 0.08
+        },
+        {
+          "t": "Não é «pele sensível» genérica. É fototipo, é ",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "inset(0px 0.03% 0px 0px)"
+      ],
+      "act": "flow",
+      "stages": [
+        -1318,
+        894,
+        4674
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 14,
+      "y": 4306,
+      "pct": 41,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "flow",
+      "stages": [
+        -1743,
+        469,
+        4249
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 15,
+      "y": 4731,
+      "pct": 46,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pan",
+      "stages": [
+        -2168,
+        44,
+        3824
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 16,
+      "y": 4833,
+      "pct": 47,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        -15
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pan",
+      "stages": [
+        -2270,
+        0,
+        3722
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 17,
+      "y": 5386,
+      "pct": 52,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        -155
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pan",
+      "stages": [
+        -2823,
+        0,
+        3169
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 18,
+      "y": 5939,
+      "pct": 57,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        -296
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pan",
+      "stages": [
+        -3376,
+        0,
+        2616
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 19,
+      "y": 6492,
+      "pct": 63,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        -436
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pan",
+      "stages": [
+        -3929,
+        0,
+        2063
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 20,
+      "y": 7045,
+      "pct": 68,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        -576
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pan",
+      "stages": [
+        -4482,
+        0,
+        1510
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 21,
+      "y": 7598,
+      "pct": 73,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        -717
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pan",
+      "stages": [
+        -5035,
+        0,
+        957
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 22,
+      "y": 8580,
+      "pct": 83,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Mais de 87 mil pessoas acompanham o trab",
+          "dir": "dark-on-light",
+          "worst": 15.98,
+          "mean": 15.98
+        }
+      ],
+      "cues": [
+        {
+          "t": "Mais de 87 mil pessoas acompanham o trabalho d",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        -731
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pin",
+      "stages": [
+        -6017,
+        -925,
+        0
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 23,
+      "y": 8822,
+      "pct": 85,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Mais de 87 mil pessoas acompanham o trab",
+          "dir": "dark-on-light",
+          "worst": 15.98,
+          "mean": 15.98
+        }
+      ],
+      "cues": [
+        {
+          "t": "Mais de 87 mil pessoas acompanham o trabalho d",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        -731
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pin",
+      "stages": [
+        -6259,
+        -1167,
+        0
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 24,
+      "y": 9064,
+      "pct": 87,
+      "settled": true,
+      "contrast": [],
+      "cues": [
+        {
+          "t": "Mais de 87 mil pessoas acompanham o trabalho d",
+          "o": 0.71
+        }
+      ],
+      "clips": [],
+      "rails": [
+        -731
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pin",
+      "stages": [
+        -6501,
+        -1409,
+        0
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 25,
+      "y": 9306,
+      "pct": 90,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        -731
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pin",
+      "stages": [
+        -6743,
+        -1651,
+        0
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 26,
+      "y": 9548,
+      "pct": 92,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        -731
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pin",
+      "stages": [
+        -6985,
+        -1893,
+        0
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 27,
+      "y": 9790,
+      "pct": 94,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        -731
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pin",
+      "stages": [
+        -7227,
+        -2135,
+        0
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 28,
+      "y": 9845,
+      "pct": 95,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        -731
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pin",
+      "stages": [
+        -7282,
+        -2190,
+        -30
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 29,
+      "y": 10127,
+      "pct": 98,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        -731
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "pin",
+      "stages": [
+        -7564,
+        -2472,
+        -312
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    },
+    {
+      "i": 30,
+      "y": 10384,
+      "pct": 100,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        -731
+      ],
+      "wipes": [
+        "inset(0px 0% 0px 0px)"
+      ],
+      "act": "flow",
+      "stages": [
+        -7821,
+        -2729,
+        -569
+      ],
+      "segs": [],
+      "custom": [],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "rgb(250,247,242)"
+    }
+  ],
+  "consoleErrors": [],
+  "failed": []
+}

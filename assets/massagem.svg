@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2"/>
+      <stop offset="100%" stop-color="#F0EADD"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#bgGrad)"/>
+  <!-- Massagem terapêutica: maca e toalha -->
+  <rect x="240" y="300" width="420" height="420" rx="16" fill="#F0EADD" stroke="#D9CCB8" stroke-width="2"/>
+  <rect x="300" y="360" width="300" height="200" rx="8" fill="#E6DBD0"/>
+  <rect x="340" y="580" width="220" height="60" rx="4" fill="#9A5A3C" opacity="0.15"/>
+  <rect x="440" y="520" width="60" height="100" rx="4" fill="#F0EADD"/>
+</svg>

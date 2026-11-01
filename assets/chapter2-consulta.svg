@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2"/>
+      <stop offset="100%" stop-color="#F0EADD"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bgGrad)"/>
+  <!-- Sala de atendimento minimalista: maca, bandeja, planta, luz -->
+  <rect x="420" y="520" width="560" height="300" rx="8" fill="#F0EADD" stroke="#D9CCB8" stroke-width="2"/>
+  <rect x="480" y="560" width="440" height="60" rx="4" fill="#E6DBD0"/>
+  <rect x="520" y="640" width="120" height="160" rx="6" fill="#251D18"/>
+  <rect x="760" y="640" width="120" height="160" rx="6" fill="#251D18"/>
+  <!-- planta -->
+  <circle cx="1100" cy="420" r="90" fill="#8A7A66" opacity="0.35"/>
+  <circle cx="1120" cy="400" r="70" fill="#8A7A66" opacity="0.5"/>
+  <!-- janela com luz suave -->
+  <rect x="200" y="100" width="220" height="420" rx="10" fill="#F5F0E8" stroke="#D9CCB8" stroke-width="2"/>
+  <rect x="240" y="140" width="140" height="340" fill="#FAF7F2" opacity="0.6"/>
+</svg>
