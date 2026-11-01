@@ -10,7 +10,7 @@
 <link rel="icon" type="image/svg+xml" sizes="16x16" href="favicon-16x16.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.svg">
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#9A5A3C">
+<meta name="theme-color" content="#2A1712">
 <meta property="og:title" content="Zarah Flor · Clínica de estética especialista em pele negra">
 <meta property="og:description" content="Clínica de estética e saúde em São Paulo, especialista em tratamentos para pele negra. Depilação a laser, limpeza de pele, drenagem, massagens e nutricionista. Agende pelo WhatsApp (11) 97065-3411.">
 <meta property="og:type" content="website">
@@ -26,274 +26,239 @@
 <meta name="twitter:image" content="og-image.svg">
 <link rel="stylesheet" href="scrollcraft.css">
 <style>
-  /* ---- Identidade visual: Zarah Flor ---- */
+  /* =========================================================================
+     Identidade visual — Zarah Flor (Manual de Identidade Visual)
+     Paleta: canvas #FAF7F2 · surface #FFFFFF · cacau #2A1712 · ink-soft #6E5E52
+     ouro #C9944A (acento, nunca texto sobre fundo claro) · hibisco #A335AE
+     ========================================================================= */
   :root {
-    /* Paleta oficial do Manual de Identidade Visual Zarah Flor */
-    --sc-canvas:     #FAF7F2;   /* Areia — fundo claro */
-    --sc-surface:    #FFFFFF;   /* branco dos cards */
-    --sc-ink:        #2A1712;   /* Cacau — texto principal */
-    --sc-ink-soft:   #6E5E52;   /* texto secundário */
-    --sc-accent:     #C9944A;   /* Ouro — acento principal */
+    --sc-canvas:     #FAF7F2;
+    --sc-surface:    #FFFFFF;
+    --sc-ink:        #2A1712;
+    --sc-ink-soft:   #6E5E52;
+    --sc-accent:     #C9944A;
     --sc-accent-ink: #FFFFFF;
-    --sc-hibisco:    #A335AE;   /* Hibisco — top bar / acento secundário */
+    --sc-hibisco:    #A335AE;
     --sc-font-display: "Archivo", system-ui, sans-serif;
     --sc-font-text:    "Geist", system-ui, sans-serif;
+    --sc-ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  body { margin: 0; background: var(--sc-canvas); color: var(--sc-ink); }
-  .sc-body, .sc-lede { color: var(--sc-ink); }
-  .chapter-1 .sc-body,
-  .chapter-1 .sc-lede { color: #E8E0D4; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--sc-canvas); color: var(--sc-ink); font-family: var(--sc-font-text); line-height: 1.55; -webkit-font-smoothing: antialiased; }
 
-  /* ---- Media frame: imagem dentro de quadro com borda sutil (simplicidade de clínica) ---- */
-  .media-frame {
-    position: relative;
-    width: 100%;
-    background: var(--sc-surface);
-    border: 1px solid rgba(110,94,82,0.25);
-    border-radius: 0.5rem;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .media-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* ---- Folio (navegação por capítulo, sem barra fixa) ---- */
-  .folio {
-    position: fixed;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    z-index: 20;
-  }
-  .folio__row {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-  }
-  .folio__item {
-    width: 0.75rem; height: 0.75rem;
-    border-radius: 50%;
-    background: var(--sc-ink-soft);
-    cursor: pointer;
-    transition: transform 0.25s var(--sc-ease-out), background 0.25s var(--sc-ease-out);
-    flex-shrink: 0;
-  }
-  .folio__item--current { background: var(--sc-accent); transform: scale(1.6); box-shadow: 0 0 0 3px rgba(154,90,60,0.25); }
-  .folio__label {
-    position: static;
-    font: 600 0.68rem/1.2 var(--sc-font-text);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--sc-ink-soft);
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.25s var(--sc-ease-out), color 0.25s var(--sc-ease-out);
-    pointer-events: none;
-  }
-  .folio__item--current ~ .folio__label,
-  .folio__item:hover ~ .folio__label { opacity: 1; color: var(--sc-ink); }
-
-  /* ---- Folha de encaminhamento (assinatura) ---- */
-  .referral {
-    position: fixed;
-    right: 2rem;
-    bottom: 2rem;
-    width: 19rem;
-    background: var(--sc-surface);
-    border: 1px solid var(--sc-ink-soft);
-    padding: 1.25rem 1.5rem;
-    font: 0.85rem/1.55 var(--sc-font-text);
-    color: var(--sc-ink);
-    transform: translatey(1.4rem);
-    opacity: 0;
-    transition: transform 0.6s var(--sc-ease-out), opacity 0.6s var(--sc-ease-out), box-shadow 0.6s var(--sc-ease-out);
-    z-index: 20;
-    box-shadow: 0 20px 40px -12px rgba(37,29,24,0.12);
-  }
-  .referral--visible { transform: translatey(0); opacity: 1; box-shadow: 0 30px 50px -16px rgba(37,29,24,0.18); }
-  .referral__title { font: 700 0.85rem/1.2 var(--sc-font-display); margin: 0 0 0.7rem 0; color: var(--sc-ink); text-transform: uppercase; letter-spacing: 0.12em; }
-  .referral__line { margin: 0 0 0.45rem 0; padding-left: 1rem; text-indent: -1rem; position: relative; }
-  .referral__line::before { content: "▪"; color: var(--sc-ink); font-weight: 700; position: absolute; left: 0; top: 0.08rem; font-size: 0.85rem; }
-  .referral__cta {
-    margin-top: 1rem;
-    display: inline-block;
-    font: 700 0.9rem/1.2 var(--sc-font-display);
-    color: var(--sc-ink);
-    background: var(--sc-accent);
-    text-decoration: none;
-    padding: 0.6rem 1rem;
-    border-radius: 0.35rem;
-    transition: transform 0.15s var(--sc-ease-out), background 0.2s var(--sc-ease-out);
-  }
-  .referral__cta:active { transform: scale(0.97); }
-
-  /* ---- Títulos de capítulo ---- */
-  .sc-chapter-title {
-    font: 700 1.05rem/1.2 var(--sc-font-display);
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--sc-ink);
-    margin: 0 0 1.1rem 0;
-  }
-
-  /* ---- Seções / capítulos ---- */
-  .sc-section { position: relative; }
-  .sc-wrap { max-width: 920px; margin: 0 auto; padding: 0 1.5rem; }
-  .sc-stack > * + * { margin-top: 1.3rem; }
-
-  .split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  .split--text-right { align-items: start; }
-  @media (max-width: 860px) {
-    .split { grid-template-columns: 1fr; gap: 2rem; }
-    .folio { display: none; }
-  }
-
-  /* Capítulo 1 — chão escuro (Cacau oficial), texto claro (hard cut de ground) */
-  .chapter-1 { background: #2A1712; color: #E8E0D4; }
-  .chapter-1 .sc-stage { color: #E8E0D4; }
-  .chapter-1 .sc-body,
-  .chapter-1 .sc-lede { color: #E8E0D4; }
-  .chapter-1 .sc-chapter-title { color: #C9A894; }
-
-  /* Capítulo 2 — coluna de mídia com quadro com borda sutil */
-  .media-col { position: relative; }
-  .media-col .media-frame { width: 100%; height: auto; }
-  .sc-caption {
-    font: 0.8rem/1.45 var(--sc-font-text);
-    color: var(--sc-ink-soft);
-    margin-top: 0.7rem;
-  }
-
-  /* ---- Placeholder com textura (até fotos reais da clínica existirem) ---- */
-  .placeholder {
-    position: relative;
-    background: var(--sc-surface);
-    border: 1px solid rgba(110,94,82,0.25);
-    border-radius: 0.5rem;
-    color: var(--sc-ink-soft);
-    font: 0.8rem/1.45 var(--sc-font-text);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    overflow: hidden;
-  }
-  .placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .placeholder__caption {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 0 1rem;
-    max-width: 26ch;
-  }
-
-  /* ---- Rail de tratamentos (pan) ---- */
-  .rail { display: flex; gap: 1.4rem; padding: 1rem 0 0.5rem 0; }
-  .rail__lead { flex: 0 0 32%; min-width: 20rem; }
-  .item { flex: 0 0 25rem; display: flex; flex-direction: column; gap: 0.7rem; }
-  .item img, .item .media-frame { width: 100%; height: 23rem; object-fit: cover; background: var(--sc-surface); display: block; border-radius: 0.5rem; border: 1px solid rgba(110,94,82,0.25); }
-  .item h3 { font: 700 1.15rem/1.25 var(--sc-font-display); margin: 0; color: var(--sc-ink); }
-  .item p { font: 0.9rem/1.55 var(--sc-font-text); color: var(--sc-ink-soft); margin: 0; }
-  @media (max-width: 860px) {
-    .rail__lead { flex: 0 0 100%; min-width: auto; }
-    .item { flex: 0 0 17rem; }
-    .item img, .item .media-frame { height: 15rem; }
-  }
-
-  /* ---- Estatísticas reais (count) ---- */
-  .sc-stats { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.4rem; }
-  .sc-stats p { margin: 0; color: var(--sc-ink); }
-
-  /* ---- Fechamento (colophon) ---- */
-  .close { padding: 5rem 0 7rem 0; }
-  .close__inner { max-width: 62ch; margin: 0 auto; }
-  .sc-cta--text {
-    display: inline-block;
-    font: 700 1rem/1.45 var(--sc-font-display);
-    color: var(--sc-ink);
-    text-decoration: underline;
-    text-underline-offset: 0.3em;
-    text-decoration-thickness: 1.5px;
-    transition: color 0.2s var(--sc-ease-out), text-decoration-color 0.2s var(--sc-ease-out);
-  }
-  .sc-cta--text:hover { color: #7A4630; text-decoration-color: #7A4630; }
-
-  .foot { margin-top: 2.6rem; border-top: 1px solid rgba(110,94,82,0.35); padding-top: 1.1rem; font: 0.75rem/1.6 var(--sc-font-text); color: var(--sc-ink-soft); }
-  .foot p { margin: 0.25rem 0; }
-
-  /* ---- Grain e scrims herdam de scrollcraft.css ---- */
-  .sc-grain { opacity: 0.035; }
-
-  /* Parallax layers (profundidade no Capítulo 2) */
-  .pf-layer { position: absolute; inset: 0; }
-
-  /* Top bar Hibisco */
+  /* =========================================================================
+     Top bar Hibisco — mensagem inclusiva (sempre visível, acima de tudo)
+     ========================================================================= */
   .top-bar {
     background: var(--sc-hibisco);
     color: #FFFFFF;
-    font: 0.82rem/1.4 var(--sc-font-text);
+    font: 600 0.82rem/1.4 var(--sc-font-text);
     text-align: center;
-    padding: 0.35rem 1rem;
+    padding: 0.45rem 1rem;
     letter-spacing: 0.02em;
+    z-index: 40;
   }
 
-  /* Banner de cookies (item 17) */
-  .cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--sc-surface);
-    border-top: 1px solid rgba(110,94,82,0.35);
-    padding: 1rem 1.5rem;
-    z-index: 100;
-    box-shadow: 0 -10px 30px -12px rgba(37,29,24,0.15);
-  }
-  .cookie-banner__content {
-    max-width: 920px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .cookie-banner__text {
-    font: 0.9rem/1.5 var(--sc-font-text);
-    color: var(--sc-ink-soft);
-    margin: 0;
-  }
-  .cookie-banner__text a {
-    color: var(--sc-ink);
-    text-decoration: underline;
-  }
-  .cookie-banner__btn {
-    font: 700 0.9rem/1.2 var(--sc-font-display);
-    color: var(--sc-ink);
+  /* =========================================================================
+     Progresso de scroll (discreto)
+     ========================================================================= */
+  [data-sc-progress] {
+    position: fixed; left: 0; top: 0; height: 3px;
     background: var(--sc-accent);
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 0.35rem;
-    cursor: pointer;
-    transition: background 0.2s var(--sc-ease-out);
+    width: 0%; z-index: 50;
+    transition: width 0.1s linear;
+  }
+
+  /* =========================================================================
+     Grain textural sutil (não distrai)
+     ========================================================================= */
+  .sc-grain {
+    position: fixed; inset: 0; opacity: 0.04; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    z-index: 5;
+  }
+
+  /* =========================================================================
+     Folio — navegação por capítulo (lateral direita)
+     ========================================================================= */
+  .folio {
+    position: fixed; right: 1.25rem; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 0.5rem; z-index: 30;
+    opacity: 0; transition: opacity 0.4s var(--sc-ease-out);
+  }
+  .folio--visible { opacity: 1; }
+  .folio__row { display: flex; align-items: center; gap: 0.5rem; }
+  .folio__item {
+    width: 0.75rem; height: 0.75rem; border-radius: 50%;
+    background: var(--sc-ink-soft); cursor: pointer;
+    transition: transform 0.25s var(--sc-ease-out), background 0.25s var(--sc-ease-out), box-shadow 0.25s var(--sc-ease-out);
+    border: 1.5px solid transparent; box-sizing: border-box;
+  }
+  .folio__item--current {
+    background: var(--sc-accent); transform: scale(1.7);
+    box-shadow: 0 0 0 3px rgba(154, 90, 60, 0.25);
+    border-color: var(--sc-accent-ink);
+  }
+  .folio__label {
+    font: 600 0.62rem/1.2 var(--sc-font-text);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--sc-ink-soft); white-space: nowrap;
+    opacity: 0; transition: opacity 0.25s var(--sc-ease-out), color 0.25s var(--sc-ease-out);
+    pointer-events: none;
+  }
+  .folio__item--current ~ .folio__label,
+  .folio__item:hover ~ .folio__label {
+    opacity: 1; color: var(--sc-accent);
+  }
+  @media (max-width: 860px) { .folio { display: none; } }
+
+  /* =========================================================================
+     Utilitários de capítulo
+     ========================================================================= */
+  .sc-section { position: relative; }
+  .sc-wrap { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+  .sc-stack > * + * { margin-top: 1.4rem; }
+  .sc-chapter-title {
+    font: 700 1.1rem/1.2 var(--sc-font-display);
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--sc-accent); margin: 0 0 1.2rem 0;
+  }
+  .sc-display { font-family: var(--sc-font-display); line-height: 1.05; }
+  .sc-display--xl { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 700; }
+  .sc-display--lg { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; }
+  .sc-body { color: var(--sc-ink); font-size: 1rem; }
+  .sc-lede { font-size: 1.1rem; color: var(--sc-ink); }
+  .sc-caption { font: 0.8rem/1.45 var(--sc-font-text); color: var(--sc-ink-soft); margin-top: 0.7rem; }
+
+  /* =========================================================================
+     1 · CAPA / title page — fluxo de entrada, sem ato de scroll próprio.
+     Hero com uma única ideia: pele negra como prioridade, não exceção.
+     ========================================================================= */
+  .capa { padding: 10vh 0 16vh 0; }
+  .capa .sc-wrap { padding-top: 6vh; }
+  .capa .sc-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+  .capa .sc-stat__num { font: 700 2rem/1.1 var(--sc-font-display); color: var(--sc-ink); }
+  .capa .sc-stat__lab { font: 0.8rem/1.3 var(--sc-font-text); color: var(--sc-ink-soft); }
+
+  /* =========================================================================
+     2 · Capítulo 1 · tensão — pin + spotlight. Chão escuro, texto claro.
+     Mais quieto que o pico (Capítulo 2).
+     ========================================================================= */
+  .chapter-1 { background: #2A1712; color: #E8E0D4; }
+  .chapter-1 .sc-body, .chapter-1 .sc-lede { color: #E8E0D4; }
+  .chapter-1 .sc-chapter-title { color: #C9A894; }
+  .chapter-1 .sc-stage { padding: 12vh 2rem; color: #E8E0D4; }
+  .chapter-1 .sc-lede { font-size: 1.35rem; max-width: 52ch; text-align: center; text-wrap: balance; }
+
+  /* =========================================================================
+     3 · Capítulo 2 · turn (PEAK) — flow + reveal + kinetic + paralaxe.
+     Maior destaque visual da página.
+     ========================================================================= */
+  .chapter-2 { padding: 9vh 0 11vh 0; }
+  .chapter-2 .sc-chapter-title { color: var(--sc-ink); }
+  .media-col { position: relative; }
+  .media-col .media-frame {
+    width: 100%; height: 560px; background: var(--sc-surface);
+    border: 1px solid rgba(110,94,82,0.25); border-radius: 0.75rem;
+    overflow: hidden; display: flex; align-items: center; justify-content: center;
+  }
+  .media-col .media-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .pf-layer { position: absolute; inset: 0; pointer-events: none; }
+
+  /* =========================================================================
+     4 · Capítulo 3 · tratamentos — pan + tilt. Breadth of range, não hierarquia.
+     ========================================================================= */
+  .chapter-3 { padding: 10vh 2rem 14vh 2rem; }
+  .rail { display: flex; gap: 1.4rem; padding: 1rem 0 0.5rem 0; overflow-x: auto; scrollbar-width: thin; }
+  .rail__lead { flex: 0 0 34%; min-width: 22rem; }
+  .item { flex: 0 0 26rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .item img, .item .media-frame {
+    width: 100%; height: 22rem; object-fit: cover; background: var(--sc-surface);
+    display: block; border-radius: 0.75rem; border: 1px solid rgba(110,94,82,0.25);
+  }
+  .item h3 { font: 700 1.2rem/1.25 var(--sc-font-display); margin: 0; color: var(--sc-ink); }
+  .item p { font: 0.9rem/1.55 var(--sc-font-text); color: var(--sc-ink-soft); margin: 0; }
+  @media (max-width: 860px) {
+    .rail__lead { flex: 0 0 100%; min-width: auto; }
+    .item { flex: 0 0 18rem; }
+    .item img, .item .media-frame { height: 15rem; }
+  }
+
+  /* =========================================================================
+     5 · Capítulo 4 · alívio — pin + count. Números reais.
+     ========================================================================= */
+  .chapter-4 { padding: 10vh 2rem; }
+  .sc-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; justify-content: center; margin-top: 1.6rem; }
+  .sc-stats p { margin: 0; text-align: center; }
+  .sc-stat__num { font: 700 2.4rem/1.1 var(--sc-font-display); color: var(--sc-ink); }
+  .sc-stat__lab { font: 0.85rem/1.3 var(--sc-font-text); color: var(--sc-ink-soft); }
+
+  /* =========================================================================
+     6 · Capítulo 5 · compromisso — flow close. CTA como texto corrido, não ilha.
+     ========================================================================= */
+  .close { padding: 6rem 0 9rem 0; }
+  .close__inner { max-width: 64ch; margin: 0 auto; }
+  .sc-cta--text {
+    display: inline-block; font: 700 1rem/1.45 var(--sc-font-display);
+    color: var(--sc-accent); text-decoration: underline; text-underline-offset: 0.3em;
+    text-decoration-thickness: 1.5px; transition: color 0.2s var(--sc-ease-out), text-decoration-color 0.2s var(--sc-ease-out);
+  }
+  .sc-cta--text:hover { color: #7A4630; text-decoration-color: #7A4630; }
+  .foot { margin-top: 3rem; border-top: 1px solid rgba(110,94,82,0.35); padding-top: 1.4rem; font: 0.75rem/1.6 var(--sc-font-text); color: var(--sc-ink-soft); }
+  .foot p { margin: 0.25rem 0; }
+
+  /* =========================================================================
+     Folha de encaminhamento (assinatura) — painel fixo à direita
+     ========================================================================= */
+  .referral {
+    position: fixed; right: 2rem; bottom: 2rem; width: 20rem;
+    background: var(--sc-surface); border: 1px solid var(--sc-ink-soft);
+    padding: 1.5rem; font: 0.85rem/1.55 var(--sc-font-text); color: var(--sc-ink);
+    transform: translatey(1.6rem); opacity: 0; transition: transform 0.6s var(--sc-ease-out), opacity 0.6s var(--sc-ease-out), box-shadow 0.6s var(--sc-ease-out);
+    z-index: 25; box-shadow: 0 20px 40px -12px rgba(37,29,24,0.12);
+    border-radius: 0.75rem;
+  }
+  .referral--visible { transform: translatey(0); opacity: 1; box-shadow: 0 30px 50px -16px rgba(37,29,24,0.18); }
+  .referral__title { font: 700 0.9rem/1.2 var(--sc-font-display); margin: 0 0 0.8rem 0; color: var(--sc-accent); text-transform: uppercase; letter-spacing: 0.12em; }
+  .referral__line { margin: 0 0 0.5rem 0; padding-left: 1.1rem; text-indent: -1.1rem; position: relative; opacity: 0; transform: translatex(-0.6rem); }
+  .referral__line::before { content: "▪"; color: var(--sc-accent); font-weight: 700; position: absolute; left: 0; top: 0.05rem; font-size: 0.85rem; }
+  .referral__cta {
+    margin-top: 1.2rem; display: inline-block; font: 700 0.95rem/1.2 var(--sc-font-display);
+    color: var(--sc-ink); background: var(--sc-accent); text-decoration: none;
+    padding: 0.7rem 1.1rem; border-radius: 0.4rem; transition: background 0.2s var(--sc-ease-out);
+  }
+  .referral__cta:hover { background: #7A4630; }
+
+  /* =========================================================================
+     Placeholder com textura (até fotos reais da clínica existirem)
+     ========================================================================= */
+  .placeholder {
+    position: relative; background: var(--sc-surface);
+    border: 1px dashed rgba(110,94,82,0.35); border-radius: 0.75rem;
+    color: var(--sc-ink-soft); font: 0.8rem/1.45 var(--sc-font-text);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.5rem; overflow: hidden; min-height: 12rem;
+  }
+  .placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .placeholder__caption { position: relative; z-index: 2; text-align: center; padding: 0 1rem; max-width: 30ch; }
+
+  /* =========================================================================
+     Banner de cookies
+     ========================================================================= */
+  .cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0; background: var(--sc-surface);
+    border-top: 1px solid rgba(110,94,82,0.35); padding: 1.2rem 1.5rem;
+    z-index: 100; box-shadow: 0 -10px 30px -12px rgba(37,29,24,0.15);
+  }
+  .cookie-banner__content { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .cookie-banner__text { font: 0.9rem/1.5 var(--sc-font-text); color: var(--sc-ink-soft); margin: 0; }
+  .cookie-banner__text a { color: var(--sc-accent); text-decoration: underline; }
+  .cookie-banner__btn {
+    font: 700 0.9rem/1.2 var(--sc-font-display); color: var(--sc-ink);
+    background: var(--sc-accent); border: none; padding: 0.65rem 1.3rem; border-radius: 0.4rem;
+    cursor: pointer; transition: background 0.2s var(--sc-ease-out);
   }
   .cookie-banner__btn:hover { background: #7A4630; }
   @media (max-width: 860px) {
@@ -301,67 +266,12 @@
     .cookie-banner__btn { width: 100%; }
   }
 
-  /* Hero stats (referência do site) */
-  .sc-stat { display:flex; flex-direction:column; gap:0.15rem; }
-  .sc-stat__num { font: 700 2rem/1.1 var(--sc-font-display); color: var(--sc-ink); }
-  .sc-stat__lab { font: 0.8rem/1.3 var(--sc-font-text); color: var(--sc-ink-soft); }
-
-  /* Tratamentos — cards no estilo do site de referência */
-  .treatments-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.6rem;
-    margin-top: 2.2rem;
-  }
-  .treatment {
-    border: 1px solid rgba(110,94,82,0.25);
-    border-radius: 0.5rem;
-    padding: 1.6rem;
-    background: var(--sc-surface);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    transition: border-color 0.2s var(--sc-ease-out), transform 0.2s var(--sc-ease-out);
-  }
-  .treatment:hover { border-color: var(--sc-accent); transform: translateY(-2px); }
-  .treatment--accent {
-    background: var(--sc-hibisco);
-    color: #FFFFFF;
-    border-color: var(--sc-hibisco);
-  }
-  .treatment--accent .treatment__badge,
-  .treatment--accent .treatment__title,
-  .treatment--accent .treatment__desc { color: #FFFFFF; }
-  .treatment__badge {
-    font: 600 0.72rem/1.2 var(--sc-font-text);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--sc-ink);
-  }
-  .treatment--accent .treatment__badge { color: #FFFFFF; }
-  .treatment__img {
-    width: 100%; aspect-ratio: 1; background: var(--sc-surface); border-radius: 0.4rem;
-    border: 1px solid rgba(110,94,82,0.15); display:flex; align-items:center; justify-content:center;
-    overflow: hidden;
-  }
-  .treatment__img img { width: 100%; height: 100%; object-fit: cover; display:block; }
-  .treatment--accent .treatment__img { background: #FFFFFF; }
-  .treatment__title { font: 700 1.25rem/1.25 var(--sc-font-display); margin: 0; color: var(--sc-ink); }
-  .treatment--accent .treatment__title { color: #FFFFFF; }
-  .treatment__desc { font: 0.9rem/1.55 var(--sc-font-text); color: var(--sc-ink-soft); margin: 0; }
-  .treatment--accent .treatment__desc { color: rgba(255,255,255,0.9); }
-  .treatment__cta {
-    display: inline-block; font: 700 0.9rem/1.2 var(--sc-font-display);
-    color: var(--sc-ink); background: #FFFFFF; text-decoration: none; padding: 0.55rem 1.1rem;
-    border-radius: 0.35rem; margin-top: auto; border: none; cursor: pointer;
-    transition: background 0.2s var(--sc-ease-out), color 0.2s var(--sc-ease-out);
-  }
-  .treatment__cta:hover { background: var(--sc-accent); color: var(--sc-ink); }
-  .treatment--accent .treatment__cta { background: #FFFFFF; color: var(--sc-hibisco); }
-  .treatment--accent .treatment__cta:hover { background: #FFFFFF; color: #7A267A; }
-
-  @media (max-width: 860px) {
-    .treatments-grid { grid-template-columns: 1fr; gap: 1.4rem; margin-top: 1.8rem; }
+  /* =========================================================================
+     Redução de movimento
+     ========================================================================= */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    .referral, .folio__item { transition: none !important; }
   }
 </style>
 </head>
@@ -402,7 +312,7 @@
 <main>
 
   <!-- 1 · CAPA / title page — flow + in. Tipo sobre o chão, nenhuma mídia acima da dobra. -->
-  <section class="sc-section" data-sc-act="flow" data-sc-drift="#FAF7F2" style="background-color:#FAF7F2;">
+  <section class="sc-section" data-sc-drift="#FAF7F2" style="background-color:#FAF7F2;">
     <div class="sc-wrap sc-stack" data-sc-in data-sc-stagger="70" style="padding-top: 9vh; padding-bottom: 16vh;">
       <h2 class="sc-chapter-title" style="margin:0 0 1rem 0; font-size: 0.9rem;">ESPECIALISTAS EM PELE NEGRA · SÃO PAULO</h2>
       <h1 class="sc-display sc-display--xl" style="text-wrap: balance; line-height: 1.05;">Normalize o <span style="color: var(--sc-ink);">luxo em sua vida.</span></h1>
@@ -499,7 +409,10 @@
         <p class="sc-display sc-display--lg" style="text-align: center;"><span data-sc-count="0 87,6" data-sc-count-at="0.1 0.7">0</span>K seguidores no Instagram</p>
         <p class="sc-display sc-display--lg" style="text-align: center;"><span data-sc-count="0 5,0" data-sc-count-at="0.1 0.7">0</span> de avaliação no Google</p>
       </div>
-      <div class="close" style="margin-top:3rem;">
+    </div>
+  </section>
+  <section id="agende" data-sc-act="flow" data-sc-drift="#FAF7F2" style="background-color:#FAF7F2;">
+    <div class="close" style="margin-top:3rem;">
         <div class="close__inner">
           <h2 class="sc-display sc-display--lg" style="text-wrap: balance;">Capítulo 5 · Venha conhecer a clínica.</h2>
           <p class="sc-body" style="max-width: 46ch; text-wrap: pretty;">Edifício Central Offices · R. Maestro Cardim, 560 - Sala 205 · Bela Vista, São Paulo - SP</p>
@@ -548,6 +461,7 @@ ScrollCraft.mount(document.body);
     { id: 2, text: "Protocolo próprio para manchas, pelos, textura e flacidez." },
     { id: 3, text: "Tratamentos com protocolo validado para pele negra." },
     { id: 4, text: "Avaliação 5,0 no Google e mais de 87 mil no Instagram." },
+    { id: 5, text: "Agendamento pelo WhatsApp · (11) 97065-3411" },
   ];
   let stamped = new Set();
 
